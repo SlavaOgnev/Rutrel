@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutrel - Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Rutrel</h1>
+            </div>
+            <nav>
+                <a href="#">Главная</a>
+                <a href="#">Транспорт</a>
+                <a href="#">Отели</a>
+                <a href="#">Маршруты</a>
+                <a href="#">Сообщения</a>
+                <a href="#">Настройки</a>
+            </nav>
+            <div class="profile">
+                <div>Профиль</div>
+                <div class="profile-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="intro-content">
+                <img src="logo-Photoroom.png" alt="Rutrel Logo" class="intro-logo">
+                <h2>Ваш путеводитель по России</h2>
+                <p>Планируйте поездки, бронируйте отели, исследуйте лучшие маршруты и находите попутчиков для совместных путешествий.</p>
+                <div class="buttons">
+                    <button class="btn">Забронировать билеты</button>
+                    <button class="btn">Маршруты по городам</button>
+                </div>
+            </div>
+            <div class="map">
+                <input type="text" placeholder="Введите город" class="search-box">
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=11.965332031250002%2C48.3416461723746%2C14.0087890625%2C49.80307310408473&layer=mapnik" style="border: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
