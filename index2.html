@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutrel - Город</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Верхнее меню -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1>Rutrel</h1>
+                </div>
+                <nav>
+                    <a href="index.html">Главная</a>
+                    <a href="#">Транспорт</a>
+                    <a href="#">Отели</a>
+                    <a href="#">Маршруты</a>
+                    <a href="#">Сообщения</a>
+                    <a href="#">Настройки</a>
+                </nav>
+                <div class="profile">
+                    <div>Профиль</div>
+                    <div class="profile-icon"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое страницы -->
+        <main class="main_content">
+            <!-- Поле поиска -->
+            <div class="search-bar">
+                <input type="text" placeholder="Алтай" class="search-input">
+                <button class="search-button">&#128269;</button>
+            </div>
+
+            <!-- Информация о городе -->
+            
+                
+                <div class=" section city-details">
+                    <h1>Алтай</h1>
+                    <p>Билеты ≈ 2100 руб.</p>
+                    <p>Проживание: от 5000 руб.</p>
+                </div>
+                <div class="date-info block2">
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <span class="month-name">Август 2024</span>
+                        </div>
+                        <div class="calendar-body">
+                            <div class="weekdays">
+                                <div>Пн</div>
+                                <div>Вт</div>
+                                <div>Ср</div>
+                                <div>Чт</div>
+                                <div>Пт</div>
+                                <div>Сб</div>
+                                <div>Вс</div>
+                            </div>
+                            <div class="days">
+                                <!-- Здесь будут генерироваться дни месяца -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            <!-- Интересные маршруты -->
+            <div class="section interesting-routes">
+                <h2>Интересные маршруты</h2>
+                <div class="route-item"><p>Восхождение на Белуху </p><p class="read">читать</p></div>
+                <div class="route-item"><p>К вершине мира через Мультинские озера</p><p class="read">читать</p></div>
+            </div>
+
+            <!-- Билеты -->
+            <div class="section tickets">
+                <h2>Билеты</h2>
+                <div class="ticket-item">7:00 - 15:00</div>
+                <div class="ticket-item">19:00 - 17:00</div>
+            </div>
+
+            <!-- Отели -->
+            <div class="section hotels">
+                <h2>Отели</h2>
+                <div class="hotel-item">Helvicka 4&#9733; - 20К</div>
+                <div class="hotel-item">Отель Дмитро...</div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const daysContainer = document.querySelector(".days");
+            const arrivalDate = new Date("2024-08-21");
+            const departureDate = new Date("2024-09-01");
+            const currentMonth = 7; // Август (нумерация месяцев начинается с 0)
+            const currentYear = 2024;
+    
+            // Функция для создания дней в календаре
+            function createCalendarDays(month, year) {
+                const daysInMonth = new Date(year, month + 1, 0).getDate(); // Количество дней в месяце
+                const firstDayIndex = new Date(year, month, 1).getDay(); // День недели первого дня месяца
+                
+                daysContainer.innerHTML = ""; // Очистка контейнера перед генерацией
+    
+                // Создание пустых ячеек до первого дня месяца
+                for (let i = 0; i < (firstDayIndex + 6) % 7; i++) {
+                    const day = document.createElement("div");
+                    day.classList.add("inactive");
+                    daysContainer.appendChild(day);
+                }
+    
+                // Создание ячеек для каждого дня месяца
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const day = document.createElement("div");
+                    day.textContent = i;
+                    if(i>=3 && i<=8){
+                        day.style.color = 'red'
+                    }
+        
+                    const currentDate = new Date(year, month, i);
+    
+                    // Проверка на совпадение с датами прилета и отлета
+                    if (currentDate.getTime() === arrivalDate.getTime() || currentDate.getTime() === departureDate.getTime()) {
+                        day.classList.add("active");
+                    }
+    
+                    daysContainer.appendChild(day);
+                }
+            }
+    
+            // Генерация календаря для текущего месяца и года
+            createCalendarDays(currentMonth, currentYear);
+        });
+    </script>
+</body>
+</html>
