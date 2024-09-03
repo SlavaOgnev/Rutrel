@@ -16,7 +16,7 @@ body {
 
 .header {
     grid-area: header;
-    background-color: #007BFF;
+    background-color: #025cab;
     padding: 15px;
     color: white;
     display: flex;
@@ -54,7 +54,7 @@ body {
 
 .search-button {
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #025cab;
     color: white;
     border: none;
     border-radius: 5px;
@@ -244,12 +244,12 @@ header .profile-icon {
 }
 
 .days div.active {
-    background-color: #007BFF;
+    background-color: #025cab;
     color: white;
 }
 
 .read{
-    background-color: #007BFF;
+    background-color: #025cab;
     padding: 5px;
     color: #ffffff;
     border-radius: 5px;
